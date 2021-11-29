@@ -9,6 +9,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './layout/home/home.component';
 import { PainelComponent } from './layout/painel/painel.component';
+import { CreateAgendamentoComponent } from './layout/painel/products/create-agendamento/create-agendamento.component';
+import { ListAgendamentoComponent } from './layout/painel/products/list-agendamento/list-agendamento.component';
 
 
 const routes: Routes = [
@@ -18,7 +20,10 @@ const routes: Routes = [
   children:[
     {path:'dashboard', component: DashboardComponent},
     // {path:'**', redirectTo:'', pathMatch: 'full'},
-    {path:'products', component: ProductsComponent},
+    {path:'agendamento', component: ProductsComponent, children: [
+      {path:'create', component: CreateAgendamentoComponent},
+      {path:'', component:ListAgendamentoComponent}
+    ]},
   ],
   canActivate:[AuthGuard],
 },

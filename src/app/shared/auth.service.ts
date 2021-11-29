@@ -9,15 +9,14 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  validAcess(user:any){
+  login(user:any){
     const body = {email: user.email, password: user.password};
-    return this.http.post(`${environment.api}auth/token/`,body);
+    return this.http.post(`${environment.api}authentication/login/`,body);
   }
 
-  refreshToken(){
-    const token = window.sessionStorage.getItem("refresh");
-    const body = {refreshToken: token};
-    return this.http.post(`${environment.api}/auth/token/refresh`, body);
+  verifyToken(token:string){
+    const body = {token: token};
+    return this.http.post(`${environment.api}authentication/verify/`, body);
   }
 
   getAuthorizedToken(){
@@ -25,18 +24,18 @@ export class AuthService {
     return token
   }
 
-  saveToken(data: any){
-    if ( data.access || data.refresh  ){
-      const tokens = { accessToken:data.access, refreshToken:data.refresh }
-      window.sessionStorage.clear();
-      window.sessionStorage.setItem("token",JSON.stringify(tokens))
+  saveToken(token: string){
+    if ( this.getAuthorizedToken() ){
+      window.sessionStorage.removeItem("token")
     }
+    window.sessionStorage.clear();
+    window.sessionStorage.setItem("token",token)  
   }
 
-  onSubmit(user:any): Observable<any>{
-    const body = user;
-    return this.http.post(`${environment.api}/employees/`, body)
+  removeTokenSession(){
+    window.sessionStorage.removeItem("token")
   }
+
 
   logout(){
     window.sessionStorage.clear();

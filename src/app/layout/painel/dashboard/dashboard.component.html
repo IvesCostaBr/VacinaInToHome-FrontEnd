@@ -1,7 +1,49 @@
 <div class="container mt-5 mb-5">
     <div class="d-flex justify-content-center row">
         <div class="col-md-10">
-            <h1>Seja bem vindo </h1>
+            <h1>Seja bem vindo!</h1>
         </div>
+        <hr>
+        <br>
+        <br>
+        <div class="panel panel-primary">
+            <div class="panel-heading">Meu dados</div>
+            <div class="panel-body">
+        <div class="form-group">
+        <div class="form-group">
+            <br>
+        <label class="col-md-2 control-label" for="Nome">Nome *</label>  
+        <div class="col-md-8">
+        <input id="Nome" value="{{user.first_name}} {{user.last_name}}" name="Nome"  class="form-control input-md" required="" type="text" readonly>
+        </div>
+        </div>
+        
+        <!-- Text input-->
+        <div class="form-group">
+        <label class="col-md-2 control-label" for="Nome">CPF*</label>  
+        <div class="col-md-3">
+        <input id="cpf" name="cpf" placeholder="Apenas números" value="{{user.cpf}}"class="form-control input-md" required="" type="text" maxlength="11" pattern="[0-9]+$" readonly>
+        </div>
+        
+        <label class="col-md-1 control-label" for="Nome">Nascimento*</label>  
+        <div class="col-md-2">
+        <input id="dtnasc" name="dtnasc" placeholder="DD/MM/AAAA" class="form-control input-md" required="" type="text" maxlength="10" OnKeyPress="formatar('##/##/####', this)" onBlur="showhide()">
+        </div>
+
+        <label class="col-md-1 control-label" for="Nome">Cartão do SUS</label>  
+        <div class="col-md-4">
+        <input id="dtnasc" name="dtnasc" class="form-control input-md" type="text" value="{{user.card_sus}}" readonly>
+        </div>
+
+        <label class="col-md-1 control-label" for="Nome">RG</label>  
+        <div class="col-md-3">
+        <input id="dtnasc" name="dtnasc" class="form-control input-md"  type="text"  value={{user.rg}} readonly>
+        </div>
+    
+    
+        
     </div>
 </div>
+
+
+  

@@ -3,6 +3,7 @@ import { AuthService } from '../../shared/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { AccountService } from '../AccountService.service';
 @Component({
   selector: 'app-create-account',
   templateUrl: './create-account.component.html',
@@ -21,7 +22,7 @@ export class CreateAccountComponent implements OnInit {
 
   constructor(
     private formBuilder:FormBuilder,
-    private auth: AuthService,
+    private accountService: AccountService,
     private router: Router,
     private toastr: ToastrService
   ) { }
@@ -32,7 +33,7 @@ export class CreateAccountComponent implements OnInit {
   sigUpUser(){
     if ( this.FormUserOnSubmit.get('password')?.value === this.FormUserOnSubmit.get('confirmPassword')?.value){
       this.FormUserOnSubmit.removeControl('confirmPassword')
-      this.auth.onSubmit(this.FormUserOnSubmit.value).subscribe({
+      this.accountService.onSubmit(this.FormUserOnSubmit.value).subscribe({
         next:(response:any)=>{
           this.toastr.success(`Olá ${response.name}`, 'seu cadastro foi realizado com successo!');
         },

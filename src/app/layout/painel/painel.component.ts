@@ -1,7 +1,10 @@
-import { User } from './../../models/user.md';
-import { AuthService } from './../../shared/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from "ngx-spinner";
+import { AccountService } from 'src/app/account/AccountService.service';
+import { AuthService } from 'src/app/shared/auth.service';
+import { Router } from '@angular/router';
+import { Validator } from 'src/app/shared/validator_token';
+import { User } from 'src/app/models/user.md';
 
 @Component({
   selector: 'app-painel',
@@ -11,10 +14,14 @@ import { NgxSpinnerService } from "ngx-spinner";
 export class PainelComponent implements OnInit {
 
   public title="";
-  public user: User = {};
+  user: any ;
+
   constructor(
     private spinner: NgxSpinnerService,
-    private auth: AuthService
+    private account: AccountService,
+    private auth: AuthService,
+    private router: Router,
+    private validate: Validator
     ) { }
 
   ngOnInit() {
@@ -22,7 +29,14 @@ export class PainelComponent implements OnInit {
     setTimeout(() => {
       /** spinner ends after 5 seconds */
       this.spinner.hide();
+      if (this.validate.verifyToken(this.auth.getAuthorizedToken())){
+        this.account.getUser().subscribe(data => {
+          this.user = data;
+        });
+      }else{
+        console.log("token invalido")
+      }   
     },1000);
   }
-
+  
 }

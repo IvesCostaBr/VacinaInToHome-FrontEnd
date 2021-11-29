@@ -1,18 +1,18 @@
 
 <mat-toolbar>
-  <button mat-icon-button class="example-icon"  (click)="logout()" aria-label="Example icon-button with menu icon">
-   <mat-icon>menu</mat-icon>
+  <button mat-icon-button class="logout"  (click)="logout()" aria-label="Example icon-button with menu icon">
+   <mat-icon>logout</mat-icon>
  </button>
- <span >Application</span>
-</mat-toolbar>
+ <span> <span class="color">VacinaInTheHome  </span>    {{ user.first_name }}</span> 
+</mat-toolbar> 
 
 <mat-tab-group>
   <mat-tab label="Sobre Min">
     <ng-template matTabContent>
-      <app-dashboard></app-dashboard>
+      <app-dashboard [user]=user ></app-dashboard>
     </ng-template>
   </mat-tab>
-  <mat-tab label="Minhas Vacinas">
+  <mat-tab label="Meus Agendamentos">
     <ng-template matTabContent>
       <app-products></app-products>
     </ng-template>
