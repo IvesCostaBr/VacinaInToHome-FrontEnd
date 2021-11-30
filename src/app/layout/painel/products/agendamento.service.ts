@@ -18,5 +18,8 @@ constructor(private http:HttpClient) { }
     const body = {Authorization:`Bearer ${this.token}`}
     return this.http.get<Agendamento[]>(`${environment.api}agendamentos/`,{headers:body})
   }
-
+  createAgendamento(agendamento:Agendamento){
+    const body = {Authorization:`Bearer ${this.token}`}
+    return this.http.post(`${environment.api}agendamentos/`,{headers:body})
+  }
 }
