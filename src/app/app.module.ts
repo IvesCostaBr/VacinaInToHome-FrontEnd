@@ -39,6 +39,8 @@ import { AuthenticationComponent } from './layout/authentication/authentication.
 import { NavbarAdminComponent } from './layout/painel/navbar-admin/navbar-admin.component';
 import { ProductsComponent } from './layout/painel/products/products.component';
 import { DashboardComponent } from './layout/painel/dashboard/dashboard.component';
+import { ListAgendamentoComponent } from './layout/painel/products/list-agendamento/list-agendamento.component';
+
 
 
 @NgModule({
@@ -58,6 +60,9 @@ import { DashboardComponent } from './layout/painel/dashboard/dashboard.componen
     ProductsComponent,
     TitleComponent,
     NavbarAdminComponent,
+    CreateAccountComponent,
+    ListAgendamentoComponent
+    
   ],
   imports: [
     BrowserModule,

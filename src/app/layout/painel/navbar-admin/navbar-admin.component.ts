@@ -1,5 +1,5 @@
 import { AuthService } from '../../../shared/auth.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user.md';
 import { Router } from '@angular/router';
 import { LoaderService } from '../../../shared/loader.service';
@@ -11,11 +11,7 @@ import { LoaderService } from '../../../shared/loader.service';
   styleUrls: ['./navbar-admin.component.css']
 })
 export class NavbarAdminComponent implements OnInit {
-
-
-  user: User = {
-    name:"ives costa"
-  };
+  @Input() user:any
 
   constructor(
     private auth: AuthService,
