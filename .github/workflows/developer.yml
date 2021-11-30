@@ -1,4 +1,4 @@
-name: Pipeline CI/CD VacinaInTheHome FrontEnd
+name: D3 Site Test/Deploy Pipeline
 
 on:
   push:
@@ -11,7 +11,13 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Testing Env
+    - name: install heroku
       run: |
-        ls
-        
+        curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+
+    - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+      with:
+        heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+        heroku_app_name: ${{ secrets.HEROKU_APP }} #Must be unique in Heroku
+        heroku_email: ${{ secrets.HEROKU_EMAIL }}
+        branch: "master"
