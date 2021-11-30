@@ -27,21 +27,58 @@
         
         <label class="col-md-1 control-label" for="Nome">Nascimento*</label>  
         <div class="col-md-2">
-        <input id="dtnasc" name="dtnasc" placeholder="DD/MM/AAAA" class="form-control input-md" required="" type="text" maxlength="10" OnKeyPress="formatar('##/##/####', this)" onBlur="showhide()">
+        <input id="dtnasc" name="dtnasc" value="02/05/2000" readonly class="form-control input-md" required="" type="text" maxlength="10" OnKeyPress="formatar('##/##/####', this)" onBlur="showhide()">
         </div>
 
-        <label class="col-md-1 control-label" for="Nome">Cartão do SUS</label>  
+        <label class="col-md-1 control-label" for="Nome">Cartão do SUS*</label>  
         <div class="col-md-4">
         <input id="dtnasc" name="dtnasc" class="form-control input-md" type="text" value="{{user.card_sus}}" readonly>
         </div>
 
-        <label class="col-md-1 control-label" for="Nome">RG</label>  
+        <label class="col-md-1 control-label" for="Nome">RG*</label>  
         <div class="col-md-3">
-        <input id="dtnasc" name="dtnasc" class="form-control input-md"  type="text"  value={{user.rg}} readonly>
+        <input id="dtnasc" name="dtnasc" value=2912471-4 class="form-control input-md"  type="text"  readonly>
         </div>
-    
-    
-        
+
+        <br>
+        <div class="panel panel-primary">
+            <div class="panel-heading">Endereço*</div>
+            <div class="panel-body">
+        <div class="form-group">
+
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="Nome">Rua<strong style="color: red;" >*</strong></label>  
+            <div class="col-md-3">
+            <input id="rua" name="rua"  value="{{ user.adress.rua }}"class="form-control input-md"  type="text" maxlength="11" pattern="[0-9]+$" readonly>
+            </div>
+            <label class="col-md-2 control-label" for="Numero">Numero<strong style="color: red;" >*</strong></label>  
+            <div class="col-md-3">
+            <input id="rua" name="numero"  value="{{ user.adress.numero }}"class="form-control input-md"  type="text" maxlength="11" pattern="[0-9]+$" readonly>
+            </div>
+            
+            <label class="col-md-1 control-label" for="complemento">Complemento<strong style="color: red;" >*</strong></label>  
+            <div class="col-md-2">
+            <input id="bairro" name="complemento" value="{{ user.adress.complemento }}" readonly class="form-control input-md" required="" type="text" maxlength="10" OnKeyPress="formatar('##/##/####', this)" onBlur="showhide()">
+            </div>
+
+            <label class="col-md-1 control-label" for="bairro">Bairro<strong style="color: red;" >*</strong></label>  
+            <div class="col-md-2">
+            <input id="bairro" name="bairro" value="{{ user.adress.bairro }}" readonly class="form-control input-md" required="" type="text" maxlength="10" OnKeyPress="formatar('##/##/####', this)" onBlur="showhide()">
+            </div>
+
+            <label class="col-md-1 control-label" for="cidade">Cidade<strong style="color: red;" >*</strong></label>  
+            <div class="col-md-4">
+            <input id="cidade" name="cidade" class="form-control input-sm" type="text" value="{{ user.adress.cidade }}" readonly>
+            </div>
+            
+            <label class="col-md-1 control-label" for="Estado">Estado<strong style="color: red;" >*</strong></label>  
+            <div class="col-md-3">
+            <input id="estado" name="estado" value="{{ user.adress.estado }}" class="form-control input-md"  type="text"  readonly>      
+        </div>
+        <br>
+        <hr>
+        <p><strong style="color: red;" >*</strong> Caso você tenha errado algum dado durante seu cadastro, por favor entrar em contato com o suporte pelo botão abaixo.</p>
+        <a href="https://api.whatsapp.com/send?1=pt_BR&phone=5500000000000" type="button" class="btn btn-success">Entrar em contato</a>  
     </div>
 </div>
 

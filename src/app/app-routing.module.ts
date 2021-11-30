@@ -22,7 +22,7 @@ const routes: Routes = [
     // {path:'**', redirectTo:'', pathMatch: 'full'},
     {path:'agendamento', component: ProductsComponent, children: [
       {path:'create', component: CreateAgendamentoComponent},
-      {path:'', component:ListAgendamentoComponent}
+      {path:'list', component:ListAgendamentoComponent}
     ]},
   ],
   canActivate:[AuthGuard],

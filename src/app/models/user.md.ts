@@ -1,3 +1,5 @@
+import { Endereco } from "./endereco.md";
+
 export interface User {
   uuid: number,
   cpf: string,
@@ -5,6 +7,7 @@ export interface User {
   last_name: string,
   email:string
   card_sus:string
+  adress: Endereco
 }
 
 export interface Login {

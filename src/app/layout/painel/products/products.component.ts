@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models/user.md';
+
+import { AgendamentoService } from './agendamento.service';
 
 
 @Component({
@@ -8,10 +11,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
+  agendamentos:any[] = [];
+
   public title="Services";
-  constructor() { }
+  constructor(private agendamento: AgendamentoService) { }
 
   ngOnInit() {
-  }
+    this.agendamento.getAgendamentos().subscribe(
+      {
+        next:(data:any) => {
+          var agenda:User[] = data;
+          this.agendamentos = agenda
 
+        },error:(error: any) => {
+
+        },complete:()=>{
+        
+        }
+      }
+    )
+  }
 }
