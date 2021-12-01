@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user.md';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { AgendamentoService } from './agendamento.service';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -16,7 +17,8 @@ export class ProductsComponent implements OnInit {
   public title="Services";
   constructor(
     private agendamento: AgendamentoService,
-    private _snackbar: MatSnackBar
+    private _snackbar: MatSnackBar,
+    private toastr: ToastrService,
     ) { }
 
   openSnackBar() {
@@ -39,4 +41,8 @@ export class ProductsComponent implements OnInit {
       }
     )
   }
+  serviceOff(){
+    this._snackbar.open('Desculpe, erro ao tentar editar seu agendamento, tente mais tarde', 'Fechar');
+  }
+
 }

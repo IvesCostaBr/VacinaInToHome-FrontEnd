@@ -1,13 +1,68 @@
 <div class="container">
+      <h1 class="mb-3">Agendamento</h1>
+      <form class="form-control" method="POST" (ngSubmit)="sigUpUser()" >
+      <h2 class="mb-3">Endereço de Visita</h2>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="cc-name">Rua</label>
+          <input type="text" class="form-control" id="rua" placeholder="Ex.: Rua Joaquin da silva" required>
+          <small class="text-muted">Nome da rua completo</small>
+          <div class="invalid-feedback">
+            nome da rua obrigatório
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="numero">Número</label>
+            <input type="text" class="form-control" id="numero" placeholder="Ex.: 15" required>
+            <small class="text-muted">O numero de indentificação de sua casa</small>
+            <div class="invalid-feedback">
+              Numero da casa obrigatório
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="complemento">Complemento</label>
+            <input type="text" class="form-control" id="complemento" placeholder="Ex.:Proximo a quadra esportiva" required>
+            <small class="text-muted">ponto de referência para sua residência</small>
+          </div>
+        <div class="col-md-6 mb-3">
+          <label for="cc-number">Bairro</label>
+          <input type="text" class="form-control" id="bairro" placeholder="Ex.: praça II" required>
+        </div>
+        <div class="col-md-6">
+            <label for="lastName">Cidade</label>
+            <input type="text" class="form-control" id="cidade" placeholder="Ex.: Sena Madureira" value="" required>
+          </div>
+        </div>
+        <hr>
+        <h2 class="mb-3">Dados de Vacinação</h2>
+        <br>
+        <div class="col-md-6 mb-3">
+            <label for="cc-number">Data da Visita</label>
+            <input type="datetime-local" class="form-control" id="data" required>
+        </div>
+        <div class="col-md-6  mb-3">
+            <label for="vacinas">Vacinas Disponiveis</label>
+            <select name="vacinas" id="vacinas">
+                <option value="pfizer">Pfizer</option>
+                <option value="astra">Saab</option>
+                <option value="coronavac">Mercedes</option>
+                <option value="fba">Frebe Amarela</option>
+                <option value="gripe">Gripe</option>
+              </select>
+        </div>
+
+        <button class="btn btn-success btn-lg" style="margin-top: 40px;" [disabled]="FormAgendamentoCreate.invalid" type="submit" >Agendar </button> 
+        <a (click)="redirectPainel()" style="margin-top: 40px;border-left-width: 20px;margin-left: 20px;" class="btn btn-danger btn-lg" style="margin-top: 40px;" type="submit"  >Cancelar </a>
+    </form>
+</div>
+
+<!-- 
+<div class="container">
     <div class="wrap-login100 width">
-        <form method="POST" class="login100-form validate-form" (ngSubmit)="sigUpUser()"   >
+        <form method="POST" class="login100-form validate-form" (ngSubmit)="sigUpUser()" [formGroup]="FormAgendamentoCreate" >
           <span class="login100-form-title">
           Criar Agendamento
           </span>
-          <div _ngcontent-ipq-c61="" data-tilt="" class="login100-pic js-tilt"><img _ngcontent-ipq-c61="" class="image"  src="https://colorlib.com/etc/lf/Login_v1/images/img-01.png" alt="IMG"></div>
-          <div *ngIf="responseSubmit" >
-            <p style="color: red; text-align:center; margin-top:-30px; margin-bottom:20px;" >{{ responseSubmit }}</p>
-          </div>
           <div class="wrap-input100 validate-input">
             <input class="input100" type="text"  name="name" formControlName="name" placeholder="Nome">
             <span class="focus-input100"></span>
@@ -47,5 +102,5 @@
           </div>
         </form>
     </div>
-</div>
+</div> -->
 

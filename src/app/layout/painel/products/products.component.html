@@ -10,7 +10,7 @@
             <h3><strong>Data de Agendamento: </strong>{{agend.data_visita}}</h3>
             <h3><strong>Solicitante:</strong> {{ agend.paciente.first_name }}  {{agend.paciente.last_name}}   <strong>CPF:</strong> {{ agend.paciente.cpf }}</h3>
             <h3><strong>Vacina:</strong> {{ agend.vacina.vacina_type }}</h3>
-            <a  [routerLink]="['/painel/agendamento/create']" routerLinkActive="router-link-active"  mat-raised-button color="primary">Editar</a> <button mat-raised-button color="warn" (click)="openSnackBar()">Cancelar</button>
+            <a  [routerLink]="['/painel/agendamento/create']" routerLinkActive="router-link-active" (click)="serviceOff()"  mat-raised-button color="primary">Editar</a> <button mat-raised-button color="warn" (click)="openSnackBar()">Cancelar</button>
         </mat-card>
         <br>
     <br>

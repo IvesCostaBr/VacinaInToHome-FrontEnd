@@ -31,16 +31,6 @@
 
 Para executa essa aplicação, vamos começar com a instalação de todos os pacotes node necessarios para o funcionamento do projeto através do comando `npm update`.
 
-## .ENV
-
-- Para o rodar o projeto localmente , vai precisar do arquivo .env dentro da pasta /app/ então crie-o colocando o conteudo abaixo.
-
-```text
-SECRET_KEY=django-insecure-@irl6g)r5^-rwrn&%vr3(lp3#53+1=ghi20$8k@drjeif55g1)
-DEBUG=True
-```
-Caso queria trocar a aplicação para modo Debug , basta trocar de False para True
-
 
 ### Rodar com Docker
 caso queira rodar a aplicação utilizando docker, basta digitar os comando abaixo utilizando o docker-compose.

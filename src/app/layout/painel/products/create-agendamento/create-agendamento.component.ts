@@ -3,6 +3,9 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AgendamentoService } from '../agendamento.service';
+import { Agendamento } from 'src/app/models/agendamento.md';
+import { UserService } from '../../user.service.service';
+import { AccountService } from 'src/app/account/AccountService.service';
 
 @Component({
   selector: 'app-create-agendamento',
@@ -22,7 +25,17 @@ export class CreateAgendamentoComponent implements OnInit {
     vacina: new FormControl(''),
   });
 
+  agendamentoForm : Agendamento = {
+    data_visita:'',
+    rua:'',
+    bairro:'',
+    numero:'',
+    cidade:'',
+    vacina:''
+  }
+
   public responseSubmit: string | undefined;
+  public isPaciente = true;
 
   constructor(
 
@@ -30,6 +43,7 @@ export class CreateAgendamentoComponent implements OnInit {
     private toastr: ToastrService,
     private agendamento: AgendamentoService,
     private router: Router,
+    private user: AccountService
 
   ) { }
 
@@ -65,8 +79,7 @@ export class CreateAgendamentoComponent implements OnInit {
     });
   }
 
-
-
-
-
+  redirectPainel(){
+    this.router.navigate(['/painel/'])
+  }
 }
