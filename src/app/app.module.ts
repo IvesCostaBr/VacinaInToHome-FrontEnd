@@ -23,7 +23,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { HomeComponent } from './layout/home/home.component';
 import { ContactComponent } from './layout/contact/contact.component';
@@ -40,7 +40,6 @@ import { NavbarAdminComponent } from './layout/painel/navbar-admin/navbar-admin.
 import { ProductsComponent } from './layout/painel/products/products.component';
 import { DashboardComponent } from './layout/painel/dashboard/dashboard.component';
 import { ListAgendamentoComponent } from './layout/painel/products/list-agendamento/list-agendamento.component';
-
 
 
 @NgModule({
@@ -71,6 +70,7 @@ import { ListAgendamentoComponent } from './layout/painel/products/list-agendame
     HttpClientModule,
     ReactiveFormsModule,
     NgxSpinnerModule,
+    MatSnackBarModule,
     MatIconModule,
     ModalModule.forRoot(),
     CollapseModule.forRoot(),

@@ -21,12 +21,12 @@ const routes: Routes = [
     {path:'dashboard', component: DashboardComponent},
     // {path:'**', redirectTo:'', pathMatch: 'full'},
     {path:'agendamento', component: ProductsComponent, children: [
-      {path:'create', component: CreateAgendamentoComponent},
       {path:'list', component:ListAgendamentoComponent}
     ]},
   ],
   canActivate:[AuthGuard],
 },
+{path:'create-agendamento', component: CreateAgendamentoComponent},
 {
   path:'',
   component:HomeComponent,

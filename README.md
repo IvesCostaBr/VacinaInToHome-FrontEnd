@@ -1,27 +1,73 @@
-# Cms
+<h1  align="center">VacinaInTheHome Frontend🚀</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.4.
+![Settings Window](https://i.imgur.com/U59PCdc.jpeg)
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## 📝 Sobre o projeto
 
-## Code scaffolding
+- Trata-se de uma plataforma de agendamento de vacinas.Visando a dificuldade de algumas pessoas de ir até o local de vacinação, seja por medo ou por problemas de saúde, o vacinaInTheHome chegou para resolver esse problema. Com a plataforma você pode agendar sua vacinação no cnforto e segurança da sua casa!
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    
+## 🛠️ Tecnologias Utilizadas
 
-## Build
+[Angular12](https://www.python.org/)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+[NPM](https://www.djangoproject.com/)
 
-## Running unit tests
+[NodeJs](https://www.django-rest-framework.org/)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## 🔍 Pré-requisitos
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+[Node >= 14.15](https://www.python.org/)
 
-## Further help
+[Angular](https://docs.docker.com/compose/)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+[Aplicação Backend]()
+
+
+
+## ⚙️ Como executar o projeto
+
+Para executa essa aplicação, vamos começar com a instalação de todos os pacotes node necessarios para o funcionamento do projeto através do comando `npm update`.
+
+## .ENV
+
+- Para o rodar o projeto localmente , vai precisar do arquivo .env dentro da pasta /app/ então crie-o colocando o conteudo abaixo.
+
+```text
+SECRET_KEY=django-insecure-@irl6g)r5^-rwrn&%vr3(lp3#53+1=ghi20$8k@drjeif55g1)
+DEBUG=True
+```
+Caso queria trocar a aplicação para modo Debug , basta trocar de False para True
+
+
+### Rodar com Docker
+caso queira rodar a aplicação utilizando docker, basta digitar os comando abaixo utilizando o docker-compose.
+
+```bash
+# startando o container docker do docker
+
+#comando para buildar a imagen docker
+$ docker-compose build
+
+#comando para subir os containers
+$ docker-compose up -d
+
+```
+
+### Rodar em sua maquina
+
+ - Se estiver rodando em ambiente Unix basta executar o script run_api.sh que ele criará um maquina virutal python e vai instalar todas dependências nela e executar a aplicação.
+
+ ```bash
+    bash run_app.sh
+ ```
+
+- Se estiver rodando em ambiente Windows siga os passos abaixo:
+  - 1 - Basta digitar o comando `ng serve` certifique-se de que todas as dependências do projeto estão instaladas
+
+
+
+#### Se você seguiu todos os dados Certinho o servidor já está ativo com a aplicação na rota http://localhost:4200/
+
